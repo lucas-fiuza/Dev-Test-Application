@@ -1,0 +1,52 @@
+div.custom-container{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+
+    div.container-title{
+        text-align: center;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 5px;
+        font-size: 15pt;
+        margin-bottom: 5px;
+    }
+}
+
+mat-form-field
+{
+    width: calc(100% - 20px);
+}
+div.resultado{
+    font-size: 15pt;
+    text-align: center;
+    font-weight: 500;
+}
+div.resultado > div {
+    margin-bottom: 5px;
+}
+
+div#status.Aprovado{
+    color: darkgreen;
+}
+
+div#status.Recusado{
+    color: darkred;
+}
+
+mat-form-field.custom-datetime{
+    width: calc(100% - 12px);
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+:host ::ng-deep {
+
+    mat-grid-tile:nth-child(4)
+    {
+        width: 100%;
+    }
+}

@@ -1,0 +1,77 @@
+<mat-toolbar color="primary">
+    <span>Banco LF</span>
+</mat-toolbar>
+
+<div class="custom-container">
+    <div class="container-title">
+        Consulta Crédito
+    </div>
+    <div class="container-content">
+        <form [formGroup]="consultaForm">
+            <mat-grid-list cols="5" rowHeight="100">
+                <mat-grid-tile>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Tipo Crédito</mat-label>
+                        <mat-select  formControlName="tipocredito">
+                          <mat-option *ngFor="let tipo of tipoCredito" [value]="tipo.value">
+                            {{tipo.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Quantidade Parcelas</mat-label>
+                        <input matInput type="number" formControlName="quantidadeparcelas" step="1">
+                        <mat-error *ngIf="validaCampoValorCredito()">Campo inválido</mat-error>
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Valor Crédito</mat-label>
+                        <input matInput type="number" formControlName="valorcredito" step="0.01">
+                        <mat-error *ngIf="validaCampoValorCredito()">Campo inválido</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile><div>
+                    <mat-form-field appearance="fill" class="custom-datetime">
+                        <mat-label>Data Vencimento</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="datavencimento" >
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker" style="position: absolute;right: 0;bottom: 35px;"></mat-datepicker-toggle>
+                </div></mat-grid-tile>
+                <mat-grid-tile>
+                    <button mat-raised-button color="primary" style="width: 200px;" (click)="onSubmit()">Enviar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </form>
+        <mat-divider></mat-divider>
+        <br>
+        <div *ngIf="mostrarResultado" class="resultado">
+            <div style="display: inline-flex;">
+                Status:&ensp;
+                <div id="status" [class]="resultadoConsulta.statusCredito">
+                    {{resultadoConsulta.statusCredito}}
+                </div>
+            </div>
+            <br>
+            <div style="display: inline-flex;">
+                Total:
+                <div id="valor">
+                    R$ {{resultadoConsulta.totalComJuros}}
+                </div>
+            </div>
+            <br>
+            <div style="display: inline-flex;">
+                Juros:
+                <div id="juros">
+                    R$ {{resultadoConsulta.valorJuros}}
+                </div>
+            </div>
+        </div>
+        <br>
+        
+    </div>
+</div>
