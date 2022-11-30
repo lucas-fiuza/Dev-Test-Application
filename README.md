@@ -1,6 +1,6 @@
 # Dev-Test (Liberação de Crédito)
 
-1 - Aplicação para controle de liberação de crédito constituida de back-end e front-end construídos separadamente. O back-end foi construido com C# e framework .Net Core 3.1 com documentação realizada atráves do framework Swagger para .Net Core. O front-end foi criado com Angular versão 13 (Typescript) e componentes de inteface criados com Material UI.
+1 - Aplicação para controle de liberação de crédito constituida de back-end e front-end construídos separadamente. O back-end foi construido com C# e framework .Net Core 3.1 com documentação realizada atráves do framework Swagger para .Net Core. O front-end foi criado com Angular versão 13 (Typescript) e SCSS, componentes de inteface criados com Material UI.
 
 2 - Criado modelo base de arquitetura de microsserviços com ferramenta [draw.io](https://app.diagrams.net/)
 
